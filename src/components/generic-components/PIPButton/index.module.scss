@@ -1,0 +1,17 @@
+@import "@styles/globals";
+
+.button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 8px 16px;
+
+  transition: all 0.2s ease-in-out;
+
+  &[data-animatable="true"] {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

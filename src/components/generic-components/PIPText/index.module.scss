@@ -1,0 +1,7 @@
+@import "@styles/globals";
+
+.text{
+    @include inter-body1;
+
+    color: red;
+}

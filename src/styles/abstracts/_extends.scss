@@ -1,0 +1,25 @@
+/* Button Extends */
+
+.primary-btn {
+  background-color: $stormcloud-400;
+
+  &:hover {
+    background-color: $stormcloud-300;
+  }
+}
+
+.secondary-btn {
+  background-color: $gunmetal-100;
+
+  &:hover {
+    background-color: $gunmetal-200;
+  }
+}
+
+.tertiary-btn {
+  background-color: $orangejam-500;
+
+    &:hover {
+        background-color: $orangejam-600;
+    }
+}

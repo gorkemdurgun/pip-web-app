@@ -1,0 +1,53 @@
+@import "@styles/globals";
+
+.navbar {
+  @include grid(3, 1);
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 4rem;
+  background: linear-gradient(180deg, $white-100 0%, $white-400 100%);
+}
+
+.leftSide {
+  @include flex(row);
+  align-items: center;
+  justify-content: flex-start;
+
+  .title {
+    @include bebasneue-h3;
+  }
+}
+
+.centerSide {
+  @include flex(row);
+  gap: 2rem;
+
+  align-items: center;
+  justify-content: center;
+
+  .text {
+    cursor: pointer;
+    @include inter-body2;
+
+    text-transform: uppercase;
+  }
+}
+
+.rightSide {
+  @include flex(row);
+
+  align-items: center;
+  justify-content: flex-end;
+
+  .button {
+    @extend .tertiary-btn;
+
+    .text {
+      @include inter-body1;
+      color: $white-100;
+
+      text-transform: uppercase;
+    }
+  }
+}

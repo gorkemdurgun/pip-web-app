@@ -1,0 +1,134 @@
+@import "@styles/globals";
+
+.container {
+  @include flex(row);
+
+  .sidebar {
+    @include flex(column);
+    width: 300px;
+    height: 100vh;
+
+    background-color: $orangejam-500;
+
+    .logoBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+
+      border-bottom: 5px solid $orangejam-100;
+
+      .logoText {
+        @include inter-h6-bold;
+
+        color: $orangejam-100;
+      }
+
+      img {
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }
+
+    .sidebarItems {
+      @include flex(column);
+      flex: 1;
+      padding: 20px;
+
+      .sidebarItem {
+        @include flex(row);
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-block: 15px;
+        gap: 10px;
+
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        background-color: $orangejam-500;
+
+        &[aria-pressed="true"] {
+          border-left: 10px solid $orangejam-100;
+          background-color: opacity($orangejam-100, 0.2);
+        }
+
+        &:not(:last-child, :first-child) {
+          border-block: 1px solid $orangejam-100;
+        }
+
+        &:hover:not([aria-pressed="true"]) {
+          background-color: $orangejam-100;
+
+          .icon {
+            fill: $orangejam-600;
+          }
+          .text {
+            color: $orangejam-600;
+          }
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+
+          fill: $white-100;
+        }
+
+        .text {
+          @include inter-body1;
+
+          color: $white-100;
+        }
+      }
+    }
+
+    .quickButtons {
+      @include flex(column);
+      margin-top: auto;
+      margin-bottom: 20px;
+
+      padding: 20px;
+      gap: 10px;
+
+      .sidebarQuickButton {
+        @include flex(row);
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        gap: 10px;
+
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        background-color: $skyblue-900;
+        border-radius: 10px;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+
+          fill: $skyblue-100;
+        }
+
+        .text {
+          @include inter-body2;
+
+          color: $skyblue-100;
+        }
+      }
+    }
+  }
+
+  .content {
+    @include flex(column);
+    flex: 1;
+    padding: 20px;
+
+    background-color: $white-400;
+  }
+}

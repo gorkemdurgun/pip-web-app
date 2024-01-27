@@ -14,4 +14,13 @@
       transform: scale(1.05);
     }
   }
+
+  &[aria-disabled="true"] {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }

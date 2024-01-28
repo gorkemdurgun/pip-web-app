@@ -7,11 +7,13 @@ import {
   MdOutlineNotificationsActive as SendNotification,
   MdOutlineAdd as AddNewPatient,
   MdOutlineLogout as Logout,
+  MdSearch as Search,
+  MdSettings as Settings,
 } from "react-icons/md";
 
 import styles from "./index.module.scss";
 import { PIPButton, PIPText } from "@/components";
-import { PNG } from "@assets/images";
+import { JPG, PNG } from "@assets/images";
 import Image from "next/image";
 import { useState } from "react";
 import { SectionPatientList, SectionTreatmentHistory } from "./sections";
@@ -42,12 +44,7 @@ export const AdminPage: NextPage = () => {
         </div>
         <div className={styles.sidebarItems}>
           {sidebarItems.map((item, index) => (
-            <PIPButton
-              key={index}
-              active={selectedBarItem === index}
-              className={styles.sidebarItem}
-              onClick={() => setSelectedBarItem(index)}
-            >
+            <PIPButton key={index} active={selectedBarItem === index} className={styles.sidebarItem} onClick={() => setSelectedBarItem(index)}>
               {item.icon}
               <PIPText className={styles.text} text={item.text} />
             </PIPButton>
@@ -69,6 +66,23 @@ export const AdminPage: NextPage = () => {
         </div>
       </div>
       <div className={styles.content}>
+        <div className={styles.header}>
+          <div className={styles.searchBox}>
+            <input className={styles.searchInput} placeholder="Search" />
+            <PIPButton className={styles.searchButton}>
+              <Search className={styles.icon} />
+            </PIPButton>
+          </div>
+          <div className={styles.profileBox}>
+            <div className={styles.profileImage}>
+              <Image fill src={JPG.VetClinicLogo} alt="logo" />
+            </div>
+            <PIPText className={styles.profileText} text="Vetopia Veterinary Clinic" />
+            <PIPButton className={styles.settingsButton}>
+              <Settings className={styles.icon} />
+            </PIPButton>
+          </div>
+        </div>
         {
           {
             0: <SectionPatientList />,

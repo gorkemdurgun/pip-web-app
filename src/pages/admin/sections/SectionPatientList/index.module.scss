@@ -1,1 +1,137 @@
 @import "@styles/globals";
+
+.sectionPatientList {
+  @include flex(column);
+  gap: 20px;
+  padding: 20px;
+
+  .actions {
+    @include flex(row);
+    justify-content: flex-end;
+    gap: 10px;
+
+    border-bottom: 1px solid $gunmetal-200;
+    padding-bottom: 10px;
+
+    .filterButton {
+      @include flex(row);
+      gap: 10px;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: opacity($gunmetal-700, 0.1);
+
+      &:hover {
+        background-color: opacity($gunmetal-700, 0.2);
+      }
+
+      .filterIcon {
+        width: 20px;
+        height: 20px;
+        color: $gunmetal-300;
+      }
+
+      .filterText {
+        @include inter-body2;
+
+        color: $gunmetal-300;
+      }
+    }
+  }
+
+  .table {
+    @include flex(column);
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    .tableHeader {
+      @include grid(6, 1);
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background-color: $gunmetal-500;
+
+      .tableHeaderText {
+        @include inter-body2;
+
+        color: $white-100;
+      }
+    }
+
+    .tableBody {
+      @include flex(column);
+      gap: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: $white-100;
+
+      .tableRow {
+        @include grid(6, 1);
+        align-items: center;
+        gap: 10px;
+        padding-block: 10px;
+        border-radius: 5px;
+        background-color: $white-100;
+
+        .tableRowText {
+          @include inter-body2;
+
+          color: $gunmetal-700;
+        }
+
+        .tableRowItem {
+          @include flex(row);
+          align-items: center;
+          gap: 10px;
+
+          .whatsappButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 5px;
+            background-color: $whatsapp-green;
+            color: $white-100;
+
+            border-radius: 50%;
+
+            .whatsappIcon {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+
+        .tableRowGroup {
+          @include flex(column);
+          gap: 5px;
+        }
+
+        .tableRowAction {
+          @include flex(row);
+          gap: 10px;
+          align-items: center;
+
+          .editButton,
+          .deleteButton {
+            background-color: opacity($gunmetal-700, 0.1);
+            color: $gunmetal-400;
+            border-radius: 5px;
+
+            &:hover {
+              color: $gunmetal-700;
+            }
+
+            .editIcon,
+            .deleteIcon {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

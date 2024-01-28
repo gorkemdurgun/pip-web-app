@@ -1,0 +1,192 @@
+@import "@styles/globals";
+
+.sectionDeviceList {
+  @include flex(column);
+  gap: 20px;
+  padding: 20px;
+
+  .header {
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    border-bottom: 1px solid $gunmetal-200;
+    padding-bottom: 10px;
+
+    .titleSide {
+      @include flex(row);
+      align-items: flex-end;
+      gap: 10px;
+
+      .title {
+        @include inter-h5-medium;
+        color: $gunmetal-700;
+      }
+
+      .subtitle {
+        @include inter-body2;
+        color: $gunmetal-400;
+
+        margin-bottom: 2px;
+      }
+    }
+
+    .actionSide {
+      @include flex(row);
+      justify-content: flex-end;
+      gap: 10px;
+
+      .filterButton {
+        @include flex(row);
+        gap: 10px;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: opacity($gunmetal-700, 0.1);
+
+        &:hover {
+          background-color: opacity($gunmetal-700, 0.2);
+        }
+
+        .filterIcon {
+          width: 20px;
+          height: 20px;
+          color: $gunmetal-700;
+        }
+
+        .filterText {
+          @include inter-body2;
+
+          color: $gunmetal-700;
+        }
+      }
+    }
+  }
+
+  .list {
+    @include grid(3, 1);
+    gap: 20px;
+
+    .deviceItem {
+      @include flex(column);
+      align-items: center;
+      justify-content: flex-start;
+
+      gap: 40px;
+      padding: 10px;
+      width: 100%;
+      // height: 600px;
+
+      border-radius: 5px;
+
+      background-color: $white-700;
+
+      .deviceLogo {
+        position: relative;
+        width: 200px;
+        height: 200px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .deviceInformations {
+        @include flex(column);
+        width: 100%;
+
+        gap: 5px;
+
+        .information {
+          @include grid(2, 1);
+          align-items: center;
+          justify-content: flex-start;
+
+          .informationLabel {
+            @include inter-body2;
+            color: $gunmetal-400;
+
+            text-align: left;
+
+            &:after {
+              content: ":";
+            }
+          }
+
+          .informationValue {
+            @include inter-subtitle2;
+            color: $gunmetal-600;
+
+            text-align: right;
+          }
+        }
+      }
+
+      .deviceStates {
+        @include flex(column);
+        width: 100%;
+        gap: 10px;
+
+        .action {
+          @include grid(2, 1);
+          align-items: center;
+          justify-content: flex-start;
+
+          .actionLabel {
+            @include inter-body2;
+            color: $gunmetal-400;
+
+            text-align: left;
+
+            &:after {
+              content: ":";
+            }
+          }
+
+          .actionValue {
+            @include inter-subtitle2;
+            color: $gunmetal-600;
+
+            text-align: right;
+          }
+        }
+      }
+
+      .deviceActions {
+        @include flex(column);
+        width: 100%;
+
+        gap: 10px;
+
+        .actionButton {
+          @include flex(row);
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          gap: 10px;
+          padding: 10px 20px;
+          border-radius: 5px;
+          background-color: $gunmetal-700;
+          color: $white-100;
+
+          .actionIcon {
+            width: 16px;
+            height: 16px;
+
+            color: $white-100;
+          }
+
+          .actionText {
+            @include inter-body2;
+
+            color: $white-100;
+          }
+        }
+      }
+    }
+  }
+}

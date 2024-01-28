@@ -24,9 +24,9 @@
       border-bottom: 5px solid $orangejam-100;
 
       .logoText {
-        @include inter-h6-bold;
+        @include inter-subtitle2;
 
-        color: $orangejam-100;
+        color: $white-100;
       }
 
       img {
@@ -106,20 +106,20 @@
         cursor: pointer;
         transition: all 0.2s ease-in-out;
 
-        background-color: $skyblue-900;
+        background-color: $white-200;
         border-radius: 10px;
 
         .icon {
           width: 20px;
           height: 20px;
 
-          fill: $skyblue-100;
+          fill: $orangejam-800;
         }
 
         .text {
           @include inter-body2;
 
-          color: $skyblue-100;
+          color: $orangejam-800;
         }
       }
     }
@@ -200,7 +200,7 @@
         gap: 10px;
         height: 100%;
 
-        background-color: $orangejam-100;
+        background-color: opacity($gunmetal-700, 0.1);
 
         .profileImage {
           position: relative;
@@ -208,7 +208,7 @@
           height: 42px;
 
           border-radius: 50%;
-          border: 2px solid $orangejam-500;
+          border: 2px solid $gunmetal-800;
 
           img {
             width: 100%;
@@ -222,7 +222,7 @@
           white-space: nowrap;
           @include inter-body1;
 
-          color: $orangejam-500;
+          color: $gunmetal-800;
         }
 
         .settingsButton {
@@ -236,18 +236,18 @@
           cursor: pointer;
           transition: all 0.2s ease-in-out;
 
-          background-color: $orangejam-500;
+          background-color: $gunmetal-100;
           border-radius: 5px;
 
           &:hover {
-            background-color: $orangejam-600;
+            background-color: $gunmetal-200;
           }
 
           .icon {
             width: 20px;
             height: 20px;
 
-            fill: $orangejam-100;
+            fill: $gunmetal-500;
           }
         }
       }

@@ -29,7 +29,7 @@ const Dashboard: NextPage = () => {
           </PIPButton>
         </div>
         <div className={styles.imageContainer}>
-          <Image fill alt="Microvawe Landing" src={PNG.Microvawe_Landing} />
+          <Image fill alt="Microvawe Landing" src={PNG.PetIcuExample} />
         </div>
       </section>
     </div>

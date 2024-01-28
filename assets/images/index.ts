@@ -1,12 +1,12 @@
 /* PNG */
-import Microvawe_Landing from "./png/microvawe.png";
+import PetIcuExample from "./png/pet-icu-example.png";
 
 /* JPG */
 import VetProfilePhoto from "./jpg/vet-profile.jpg";
 import VetClinicLogo from "./jpg/vet-clinic-logo.jpg";
 
 export const PNG = {
-  Microvawe_Landing,
+  PetIcuExample,
 };
 
 export const JPG = {

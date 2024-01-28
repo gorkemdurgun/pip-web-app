@@ -1,10 +1,12 @@
 import { NextPage } from "next";
 
 import {
-  MdOutlineSupervisedUserCircle as Patient,
-  MdOutlineChangeCircle as TreatmentHistory,
+  MdOutlineBuildCircle as DeviceList,
+  MdOutlineGroupWork as PatientList,
+  MdOutlineSupervisedUserCircle as VeterinaryList,
+  MdOutlineCloudCircle as TreatmentHistory,
   MdOutlinePlaylistAddCheckCircle as Receipt,
-  MdOutlineNotificationsActive as SendNotification,
+  MdOutlineNotifications as SendNotification,
   MdOutlineAdd as AddNewPatient,
   MdOutlineLogout as Logout,
   MdSearch as Search,
@@ -16,12 +18,20 @@ import { PIPButton, PIPText } from "@/components";
 import { JPG, PNG } from "@assets/images";
 import Image from "next/image";
 import { useState } from "react";
-import { SectionPatientList, SectionTreatmentHistory } from "./sections";
+import { SectionDeviceList, SectionPatientList, SectionVeterinaryList } from "./sections";
 
 const sidebarItems = [
   {
-    icon: <Patient className={styles.icon} />,
+    icon: <DeviceList className={styles.icon} />,
+    text: "Device List",
+  },
+  {
+    icon: <PatientList className={styles.icon} />,
     text: "Patient List",
+  },
+  {
+    icon: <VeterinaryList className={styles.icon} />,
+    text: "Veterinary List",
   },
   {
     icon: <TreatmentHistory className={styles.icon} />,
@@ -40,7 +50,7 @@ export const AdminPage: NextPage = () => {
     <div className={styles.container}>
       <div className={styles.sidebar}>
         <div className={styles.logoBox}>
-          <PIPText className={styles.logoText} text="LARVAL Admin" />
+          <PIPText className={styles.logoText} text="LARVAL Clinic Management System" />
         </div>
         <div className={styles.sidebarItems}>
           {sidebarItems.map((item, index) => (
@@ -58,10 +68,6 @@ export const AdminPage: NextPage = () => {
           <PIPButton animatable className={styles.sidebarQuickButton}>
             <SendNotification className={styles.icon} />
             <PIPText className={styles.text} text="Send Notification" />
-          </PIPButton>
-          <PIPButton animatable className={styles.sidebarQuickButton}>
-            <Logout className={styles.icon} />
-            <PIPText className={styles.text} text="Logout" />
           </PIPButton>
         </div>
       </div>
@@ -85,9 +91,11 @@ export const AdminPage: NextPage = () => {
         </div>
         {
           {
-            0: <SectionPatientList />,
-            1: <SectionTreatmentHistory />,
-            2: <div>Receipts</div>,
+            0: <SectionDeviceList />,
+            1: <SectionPatientList />,
+            2: <SectionVeterinaryList />,
+            3: <div>Treatment History</div>,
+            4: <div>Receipts</div>,
           }[selectedBarItem]
         }
       </div>

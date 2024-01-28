@@ -1,2 +1,3 @@
+export { SectionDeviceList } from "./SectionDeviceList";
 export { SectionPatientList } from "./SectionPatientList";
-export { SectionTreatmentHistory } from "./SectionTreatmentHistory";
+export { SectionVeterinaryList } from "./SectionVeterinaryList";

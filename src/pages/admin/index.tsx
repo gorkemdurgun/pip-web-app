@@ -71,7 +71,7 @@ export const AdminPage: NextPage = () => {
           </PIPButton>
         </div>
       </div>
-      <div className={styles.content}>
+      <div className={styles.main}>
         <div className={styles.header}>
           <div className={styles.searchBox}>
             <input className={styles.searchInput} placeholder="Search" />
@@ -89,15 +89,17 @@ export const AdminPage: NextPage = () => {
             </PIPButton>
           </div>
         </div>
-        {
+        <div className={styles.content}>
           {
-            0: <SectionDeviceList />,
-            1: <SectionPatientList />,
-            2: <SectionVeterinaryList />,
-            3: <div>Treatment History</div>,
-            4: <div>Receipts</div>,
-          }[selectedBarItem]
-        }
+            {
+              0: <SectionDeviceList />,
+              1: <SectionPatientList />,
+              2: <SectionVeterinaryList />,
+              3: <div>Treatment History</div>,
+              4: <div>Receipts</div>,
+            }[selectedBarItem]
+          }
+        </div>
       </div>
     </div>
   );

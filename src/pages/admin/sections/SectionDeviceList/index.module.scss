@@ -162,7 +162,11 @@
         gap: 10px;
 
         .actionButton {
-          @include flex(row);
+          @include grid(2, 1);
+          align-items: center;
+          justify-content: center;
+          grid-template-columns: 1fr 2fr;
+
           align-items: center;
           justify-content: center;
           width: 100%;
@@ -178,12 +182,16 @@
             height: 16px;
 
             color: $white-100;
+
+            justify-self: flex-end;
           }
 
           .actionText {
             @include inter-body2;
 
             color: $white-100;
+
+            justify-self: flex-start;
           }
         }
       }
